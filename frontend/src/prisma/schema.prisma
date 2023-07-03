@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = "mongodb://yashchoubisa04:admin123@cluster0.xcktfng.mongodb.net/iMessage-GaphQL?retryWrites=true&w=majority"
+  url      = "mongodb+srv://yashchoubisa04:admin123@cluster0.xcktfng.mongodb.net/iMessage-GraphQL?retryWrites=true&w=majority"
 }
 
 model Account {
@@ -23,7 +23,7 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])
+  @@unique([provider, providerAccountId], name: "provider_providerAccountId")
 }
 
 model Session {
